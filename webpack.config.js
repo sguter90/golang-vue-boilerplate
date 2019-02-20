@@ -4,11 +4,13 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './assets/js/index.js',
+    entry: [
+        './assets/js/index.js',
+        './assets/sass/main.scss',
+    ],
     output: {
-        path: path.resolve(__dirname, 'public/js'),
-        publicPath: '/static/js',
-        filename: 'main.js'
+        path: path.resolve(__dirname, 'public'),
+        publicPath: '/static',
     },
     devtool: 'inline-source-map',
     module: {
@@ -26,6 +28,26 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].css',
+                        }
+                    },
+                    {
+                        loader: 'extract-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader'
+                    },
+                ]
             }
         ]
     },
