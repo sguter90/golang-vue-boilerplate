@@ -1,18 +1,17 @@
-// webpack.config.js
-
 const path = require('path');
-const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     entry: [
+        './assets/js/vendor.js',
         './assets/js/index.js',
-        './assets/sass/main.scss',
-    ],
+        './assets/sass/vendor.scss',
+        './assets/sass/main.scss'],
     output: {
         path: path.resolve(__dirname, 'public'),
         publicPath: '/static',
     },
-    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -23,11 +22,6 @@ module.exports = {
                     type: 'es6', // transpile the riot tags using babel
                     hot: true
                 }
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
             },
             {
                 test: /\.scss$/,
@@ -42,15 +36,45 @@ module.exports = {
                         loader: 'extract-loader'
                     },
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader?-url'
+                    },
+                    {
+                        loader: 'postcss-loader'
                     },
                     {
                         loader: 'sass-loader'
-                    },
+                    }
+                ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
                 ]
             }
         ]
     },
+    plugins: [
+        new CopyPlugin([
+            { from: './node_modules/semantic-ui-css/themes', to: 'themes' },
+        ]),
+    ],
     devServer: {
         proxy: {
             '**': {
@@ -58,4 +82,4 @@ module.exports = {
             }
         }
     }
-}
+};
