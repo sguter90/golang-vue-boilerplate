@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -47,9 +48,13 @@ module.exports = {
                 ]
             },
             {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -74,6 +79,7 @@ module.exports = {
         new CopyPlugin([
             { from: './node_modules/semantic-ui-css/themes', to: 'themes' },
         ]),
+        new VueLoaderPlugin(),
     ],
     devServer: {
         proxy: {
