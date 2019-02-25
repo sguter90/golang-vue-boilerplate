@@ -12,8 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.3.1",
-    "riot": "^3.13.2",
     "semantic-ui-css": "^2.4.1",
     "webpack-dev-server": "^3.2.0"
   },
@@ -31,8 +29,6 @@
     "node-sass": "^4.9.3",
     "postcss-cli": "^6.0.0",
     "postcss-loader": "^3.0.0",
-    "riot-hot-reload": "^1.0.0",
-    "riot-tag-loader": "^2.1.0",
     "sass-loader": "^7.1.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.17.2",
