@@ -27,10 +27,11 @@
         <div class="row" style="border-bottom: 1px solid #d4d4d5">
             <div class="ui three wide column"></div>
             <div class="ui center aligned ten wide column">
-                <img src="static/images/logo.png" style="max-height: 80px"/>
+                <img src="static/images/logo.png" style="max-height: 80px" alt="logo"/>
             </div>
 
-            <div class="ui three wide right aligned column" style="display: flex; justify-content: end; align-items: center;">
+            <div class="ui three wide right aligned column"
+                 style="display: flex; justify-content: end; align-items: center;">
                 <div class="right aligned menu profile-switcher">
                     <div class="item">
 

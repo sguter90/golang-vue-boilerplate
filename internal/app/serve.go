@@ -31,7 +31,7 @@ func (app *App) Serve(params []string) error {
 
 	// serve static files
 	workDir, _ := os.Getwd()
-	filesDir := filepath.Join(workDir, "public")
+	filesDir := filepath.Join(workDir, "static")
 	FileServer(r, "/static", http.Dir(filesDir))
 
 	port := strconv.Itoa(app.Config.ServePort)
