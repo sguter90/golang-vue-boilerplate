@@ -6,3 +6,5 @@ let app = new Vue({
     el: '#app',
     render: h => h(App)
 });
+
+jQuery('.ui.standard.dropdown').dropdown();

@@ -1,13 +1,13 @@
 <template>
-    <div id="app" class="ui centered grid">
+    <div id="app" class="ui centered grid pusher">
         <AppHeader></AppHeader>
         <div class="row">
-            <div class="fifteen wide column">
+            <div class="sixteen wide mobile  sixteen wide tablet fifteen wide computer column">
                 <div class="ui grid">
-                    <div class="two wide column">
+                    <div class="two wide column computer only">
                         <app-nav></app-nav>
                     </div>
-                    <div class="fourteen wide stretched column">
+                    <div class="sixteen wide mobile  sixteen wide tablet  fourteen wide computer stretched column">
                         <div id="content" class="ui segment">
                             This is an stretched grid column. This segment will always match the tab height
                         </div>
