@@ -41,13 +41,9 @@
             <div class="ui twelve wide mobile  twelve wide tablet  eight wide computer  profile right aligned column">
                 <div class="right aligned menu profile-switcher">
                     <div class="item">
-
-
-                        <i class="ui rounded user icon"></i>
-
-
                         <div class="ui inline labeled icon top right pointing standard dropdown">
                             <a href="#">
+                                <i class="ui rounded user icon"></i>
                                 Username
                                 <i class="chevron down icon"></i>
                             </a>
