@@ -35,7 +35,11 @@
                 </a>
             </div>
             <div class="ui eight wide logo column computer only">
-                <img src="static/images/logo.png" alt="logo"/>
+                <router-link
+                        to="/"
+                >
+                    <img src="static/images/logo.png" alt="logo"/>
+                </router-link>
             </div>
 
             <div class="ui twelve wide mobile  twelve wide tablet  eight wide computer  profile right aligned column">
@@ -48,10 +52,13 @@
                                 <i class="chevron down icon"></i>
                             </a>
                             <div class="menu">
-                                <a class="item" href="index.php?page=profile_edit">
+                                <router-link
+                                        class="item"
+                                        to="/profile"
+                                >
                                     <i class="black setting icon"></i>
                                     Profil bearbeiten
-                                </a>
+                                </router-link>
                             </div>
                         </div>
 

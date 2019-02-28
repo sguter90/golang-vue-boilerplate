@@ -31,18 +31,16 @@
     <div id="app-nav">
 
         <div class="ui vertical fluid tabular desktop menu">
-            <a class="item">
-                Home
-            </a>
-            <a class="active item">
-                Meine Aufgaben
-            </a>
-            <a class="item">
-                Produkte
-            </a>
-            <a class="item">
-                Zeitplanung
-            </a>
+            <router-link
+                    active-class="active"
+                    :class="{ active: route.path === $router.currentRoute.path } + ' item'"
+                    v-for="route in $router.options.routes"
+                    v-if="route.show_in_nav"
+                    :key="route.path"
+                    :to="route.path"
+            >
+                {{ route.name }}
+            </router-link>
         </div>
 
 
@@ -65,3 +63,15 @@
 
 
 </template>
+
+
+<script>
+    export default {
+        name: 'nav',
+        data () {
+            return {
+                msg: 'Welcome to Your Vue.js App'
+            }
+        }
+    }
+</script>

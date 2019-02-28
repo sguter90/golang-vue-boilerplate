@@ -9,7 +9,7 @@
                     </div>
                     <div class="sixteen wide mobile  sixteen wide tablet  fourteen wide computer stretched column">
                         <div id="content" class="ui segment">
-                            This is an stretched grid column. This segment will always match the tab height
+                            <router-view/>
                         </div>
                     </div>
                 </div>
@@ -23,6 +23,7 @@
     import AppHeader from './base/AppHeader.vue'
 
     export default {
+        name: 'App',
         components: {AppNav, AppHeader}
     }
 </script>
