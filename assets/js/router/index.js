@@ -1,7 +1,11 @@
+import Vue from 'vue/dist/vue.esm'
 import Router from 'vue-router'
-import NotFound from '../pages/NotFound.vue'
-import home from '../pages/home.vue'
-import profile from '../pages/profile.vue'
+import NotFound from '../components/pages/NotFound.vue'
+import home from '../components/pages/home.vue'
+import TodoList from '../components/pages/TodoList.vue'
+import profile from '../components/pages/profile.vue'
+
+Vue.use(Router);
 
 export default new Router({
     routes: [
@@ -24,7 +28,7 @@ export default new Router({
             path: '/toto/list',
             name: 'Meine Aufgaben',
             show_in_nav: true,
-            component: home
+            component: TodoList
         },
 
         {

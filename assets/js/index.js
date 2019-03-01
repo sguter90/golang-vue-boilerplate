@@ -1,16 +1,14 @@
 import "semantic-ui-css/semantic.min"
 import Vue from 'vue/dist/vue.esm'
-import VueRouter from 'vue-router'
-import router from './components/router/index'
+import router from './router/index'
+import store from './store/index'
 import App from './components/App.vue'
-
-Vue.use(VueRouter);
 
 new Vue({
     el: '#app',
+    store,
     router,
-    components: { App },
-    template: '<App />',
+    render: h => h(App)
 });
 
 jQuery('.ui.standard.dropdown').dropdown();
