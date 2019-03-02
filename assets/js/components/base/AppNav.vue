@@ -36,7 +36,7 @@
                     :class="{ active: route.path === $router.currentRoute.path } + ' item'"
                     v-for="route in $router.options.routes"
                     v-if="route.show_in_nav"
-                    :key="route.path"
+                    :key="'desktop-' + route.path"
                     :to="route.path"
             >
                 {{ route.name }}
@@ -45,18 +45,16 @@
 
 
         <div class="ui sidebar vertical mobile menu">
-            <a class="item">
-                Home
-            </a>
-            <a class="active item">
-                Meine Aufgaben
-            </a>
-            <a class="item">
-                Produkte
-            </a>
-            <a class="item">
-                Zeitplanung
-            </a>
+            <router-link
+                    active-class="active"
+                    :class="{ active: route.path === $router.currentRoute.path } + ' item'"
+                    v-for="route in $router.options.routes"
+                    v-if="route.show_in_nav"
+                    :key="'mobile-' + route.path"
+                    :to="route.path"
+            >
+                {{ route.name }}
+            </router-link>
         </div>
 
     </div>

@@ -2,6 +2,7 @@ import Vue from 'vue/dist/vue.esm'
 import Router from 'vue-router'
 import NotFound from '../components/pages/NotFound.vue'
 import home from '../components/pages/home.vue'
+import TodoListTest from '../components/pages/TodoListTest.vue'
 import TodoList from '../components/pages/TodoList.vue'
 import profile from '../components/pages/profile.vue'
 
@@ -35,7 +36,7 @@ export default new Router({
             path: '/product/list',
             name: 'Produkte',
             show_in_nav: true,
-            component: home
+            component: TodoListTest
         },
 
         {
