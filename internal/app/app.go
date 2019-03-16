@@ -37,6 +37,7 @@ func (app *App) Usage() {
      
      Following commands are available:
      	serve		Run application webserver
+		migrate		Run database migrations
       
     `
 	fmt.Println(output)

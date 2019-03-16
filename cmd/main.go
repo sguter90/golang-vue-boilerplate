@@ -23,6 +23,11 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+	case "migrate":
+		err := application.Migrate(params)
+		if err != nil {
+			log.Fatal(err)
+		}
 	default:
 		application.Usage()
 	}

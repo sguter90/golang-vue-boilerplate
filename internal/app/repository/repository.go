@@ -20,6 +20,10 @@ func readDbConfig() (*DbEnvironment, error) {
 		"@(" + os.Getenv("DB_HOST") + ":" + os.Getenv("DB_PORT") + ")/" +
 		os.Getenv("DB_NAME")
 
+	if os.Getenv("DB_DIALECT") == "mysql" {
+		dataSource += "?parseTime=true"
+	}
+
 	env := DbEnvironment{}
 	env.Dialect = os.Getenv("DB_DIALECT")
 	env.DataSource = dataSource
