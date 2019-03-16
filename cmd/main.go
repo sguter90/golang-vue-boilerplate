@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gitea.flying-lama.com/apomedica/product-management/internal/app"
+	"github.com/sguter90/golang-vue-boilerplate/internal/app"
 	"log"
 	"os"
 )

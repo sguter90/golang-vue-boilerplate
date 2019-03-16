@@ -3,8 +3,8 @@ package app
 import (
 	"errors"
 	"fmt"
-	"gitea.flying-lama.com/apomedica/product-management/internal/app/repository"
 	"github.com/rubenv/sql-migrate"
+	"github.com/sguter90/golang-vue-boilerplate/internal/app/repository"
 	"strings"
 )
 

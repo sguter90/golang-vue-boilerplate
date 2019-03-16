@@ -2,9 +2,9 @@ package app
 
 import (
 	"fmt"
-	"gitea.flying-lama.com/apomedica/product-management/internal/app/repository"
 	"github.com/jmoiron/sqlx"
 	"github.com/joho/godotenv"
+	"github.com/sguter90/golang-vue-boilerplate/internal/app/repository"
 	"log"
 	"os"
 	"strconv"
